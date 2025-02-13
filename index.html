@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./styles.css">
+        
+    </head> 
+    <body>
+        <div class="container">
+            <div >
+                <h1 class = "header_text">Will you be my Valentine, Suaibah?</h1>
+            </div>
+            <div class="gif_container" style="padding:40px ;">
+                <img class="gif-border" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDJ6Z2pkMmVocXk5YXBlNTNqZDJ5N2h4YWJkcDZtYncydmh2M3Z5bCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/K6WIhJ07gwGkIAQfwN/giphy.gif" alt="Cute animated illustration">
+            </div>
+            <div class = "buttons">
+
+                <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
+                <button class="btn" id="noButton" onmouseover="moveButton()" onclick="changeText()">No</button> 
+            </div>
+        </div>
+
+        <img id="one" class="img-absolute" src="pictures/chocolate1.svg" alt="">
+        <img id="two" class="img-absolute" src="pictures/chocolate2.svg" alt="">
+        <img id="three" class="img-absolute" src="pictures/chocolate3.png" alt="">
+        
+        <img id="seven" class="img-absolute" src="pictures/heart4.png" alt="">
+        <img id="six" class="img-absolute" src="pictures/cookie1.gif" alt="" >
+        <img id="five" class="img-absolute" src="pictures/heart5.gif" alt="" >
+        
+        <div class="container1">
+            <img id="four" onmouseover="unhide()" class="img-absolute" src="pictures/capybara1.gif" alt="">
+            <div id="capybara-text" class="hide" >
+                I miss you too
+            </div>
+        </div>
+          
+                <script>
+                    function nextPage() {
+                        window.location.href = "yes.html";
+                    }
+                    let texts = ["Suaibah.. Why no 🥺🥺", "Are you sure, baby?", "Baby... Pretty Please...?🥺🥺", "Nuh uh, click it one more time! I dare you!"];
+                    let index = 0;
+
+                    function changeText() {
+                        let button = document.getElementById("noButton");
+                        
+                        if (index < texts.length) {
+                        button.textContent = texts[index]; // Update button text
+                        index++;
+                        } else {
+                        button.style.display = "none"; // Hide button on last click
+                        }
+        };
+
+                    
+                    
+                    function moveButton() {
+                        var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
+                        var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
+                        document.getElementById('noButton').style.left = `${x}px`;
+                        document.getElementById('noButton').style.top = `${y}px`;
+                    }
+                    let img = document.getElementById("four");
+                    let text = document.getElementById("capybara-text");
+
+                    img.addEventListener("mouseenter", function() {
+                        text.classList.remove("hide");
+                    });
+
+                    img.addEventListener("mouseleave", function() {
+                        text.classList.add("hide");
+                    });
+                </script> 
+
+    </body> 
+</html>
