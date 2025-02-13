@@ -14,7 +14,7 @@
             </div>
             <div class = "buttons">
 
-                 <a href="./yes"> <button class="btn" id = "yesButton">Yes</button></a>
+                 <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
                 <button class="btn" id="noButton" onmouseover="moveButton()" onclick="changeText()">No</button> 
             </div>
         </div>
@@ -37,6 +37,9 @@
                 <script>
                     let texts = ["Suaibah.. Why no 🥺🥺", "Are you sure, baby?", "Baby... Pretty Please...?🥺🥺", "Nuh uh, click it one more time! I dare you!"];
                     let index = 0;
+                    function nextPage() {
+                        window.location.href = "./yes";
+                    }
 
                     function changeText() {
                         let button = document.getElementById("noButton");
